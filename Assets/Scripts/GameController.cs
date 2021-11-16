@@ -69,7 +69,7 @@ public class GameController : MonoBehaviour
 
     public void ResetGame()
     {
-        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+        GameObject[] obstacles = FindObstacles();
 
         foreach (GameObject obstacle in obstacles)
         {
@@ -82,7 +82,13 @@ public class GameController : MonoBehaviour
         velocity = initialVelocity;
 
         // pausar e esperar interação do jogador para reiniciar:
-        PauseGameOver();
+        //PauseGameOver();
+    }
+
+    public GameObject[] FindObstacles()
+    {
+        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+        return obstacles;
     }
 
     public void PauseGameOver()

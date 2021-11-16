@@ -1,0 +1,38 @@
+{
+    "SlimeBot": {
+        "checkpoints": [
+            {
+                "steps": 1213,
+                "file_path": "results\\SlimeBot\\SlimeBot\\SlimeBot-1213.onnx",
+                "reward": -9920.0,
+                "creation_time": 1637025420.8174198,
+                "auxillary_file_paths": [
+                    "results\\SlimeBot\\SlimeBot\\SlimeBot-1213.pt"
+                ]
+            },
+            {
+                "steps": 30032,
+                "file_path": "results\\SlimeBot\\SlimeBot\\SlimeBot-30032.onnx",
+                "reward": null,
+                "creation_time": 1637027684.4418664,
+                "auxillary_file_paths": [
+                    "results\\SlimeBot\\SlimeBot\\SlimeBot-30032.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 30032,
+            "file_path": "results\\SlimeBot\\SlimeBot.onnx",
+            "reward": null,
+            "creation_time": 1637027684.4418664,
+            "auxillary_file_paths": [
+                "results\\SlimeBot\\SlimeBot\\SlimeBot-30032.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

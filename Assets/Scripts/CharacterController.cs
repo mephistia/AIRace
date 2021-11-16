@@ -5,14 +5,15 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     public GameController gameController;
-    bool canMove = true;
+    public bool isAlive = true;
     float characterVelocity = 4f;
     bool ignoreObstacle = false;
-    bool canJump = true;
+    public bool canJump = true;
     Animator animator;
     Vector3 startPos;
     static float jumpCooldown = 0.5f;
     WaitForSeconds waitJumpCooldown = new WaitForSeconds(jumpCooldown);
+    public float frameScore = 0f;
 
     private void Start()
     {
@@ -23,17 +24,20 @@ public class CharacterController : MonoBehaviour
     void SetStartVariables()
     {
         startPos = transform.position;
-        canMove = true;
+        isAlive = true;
         ignoreObstacle = false;
         canJump = true;
         gameObject.SetActive(true);
+        frameScore = 0f;
     }
 
     private void Update()
     {
         // bloqueia movimento quando morre
-        if (canMove)
+        if (isAlive)
         {
+            frameScore = 1f;
+
             if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
                 MoveDown();
@@ -102,7 +106,7 @@ public class CharacterController : MonoBehaviour
     {
         if (!ignoreObstacle)
         {
-            canMove = false;
+            isAlive = false;
             animator.Play("SlimeDeath");
         }
     }
@@ -112,6 +116,7 @@ public class CharacterController : MonoBehaviour
         if (ignoreObstacle)
         {
             gameController.score += 10;
+            frameScore = 10f;
         }
     }
 
